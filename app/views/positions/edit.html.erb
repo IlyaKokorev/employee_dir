@@ -1,0 +1,10 @@
+<h1><%= t('pages.global.position_redact') %></h1>
+
+<div class="container text-center">
+  <%= render 'form', position: @position %>
+</div>
+
+<br>
+
+<%= link_to t('pages.button.to_position'), @position, type: 'button', class: 'btn btn-outline-info' %>
+<%= link_to t('pages.button.back'), positions_path, type: 'button', class: 'btn btn-outline-info' %>

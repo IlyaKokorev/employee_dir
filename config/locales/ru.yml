@@ -1,0 +1,63 @@
+ru:
+  app:
+    name: 'Справочник'
+    logo: 'Справочник организации'
+    author: 'Кокорев И.С. Специльно для ФГБУ «ФРЦ» Минздрава России'
+
+  controllers:
+    application:
+      user_not_authorized: 'Пользователь не авторизован!'
+    positions:
+      save: 'Позиция добавлена!'
+      not_save: 'Позиция не добавлена!'
+      update: 'Позиция обновлена!'
+      delete: 'Позиция удалена!'
+    users:
+      save: 'Сотрудник добавлен!'
+      update: 'Данные сотрудника успешно обновлены!'
+      not_update: 'Данные сотрудника не обновлены!'
+      destroy: 'Сотрудник удален!'
+
+  pages:
+    confirmation: 'Вы уверены?'
+    button:
+      enter: 'Войти'
+      exit: 'Выйти'
+      to_position: 'К должности'
+      back: 'Назад'
+      back_to_positions: 'Назад к должностям'
+      user_new: 'Новый сотрудник'
+      position_new: 'Новая должность'
+      position_edit: 'Новая должность'
+      all_users: 'Все сотрудники'
+      view: 'Смотреть'
+      edit: 'Изменить'
+      delete: 'Удалить'
+      position_delete: 'Удалить должность'
+      download: 'Скачать список'
+
+    form:
+      position_name:
+
+    global:
+      position_edit: 'Редактирование должности'
+      user_edit: 'Редактирование сотрудника'
+      edit: 'Редактировать'
+      positions: 'Должности'
+      new_position: 'Новая должность'
+      position: 'Должность:'
+
+    table:
+      position_name: 'Название должности'
+      position_count: 'Численность'
+      surname: 'Фамилия'
+      name: 'Имя'
+      patronymic: 'Отчество'
+      date: 'Дата приема'
+      phone: 'Телефон'
+      login: 'Логин'
+      email: 'Email'
+      position: 'Должность'
+      password: 'Пароль'
+      admin: 'Администратор'
+

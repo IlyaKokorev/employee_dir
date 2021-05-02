@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('pages.global.position') %></strong>
+  <%= @position.name %>
+</p>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class=".col-md-8">
+        <div class="row">
+          <table class="table table-striped table-hover table-borderless table-responsive" >
+            <thead class="table-primary">
+            <tr>
+              <th><%= t('pages.table.surname') %></th>
+              <th><%= t('pages.table.name') %></th>
+              <th><%= t('pages.table.patronymic') %></th>
+              <th><%= t('pages.table.date') %></th>
+              <th><%= t('pages.table.phone') %></th>
+              <th><%= t('pages.table.login') %></th>
+              <th><%= t('pages.table.email') %></th>
+              <th><%= t('pages.table.position') %></th>
+              <th colspan="3"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @position.users.each do |user| %>
+              <tr>
+                <td><%= user.surname %></td>
+                <td><%= user.name %></td>
+                <td><%= user.patronymic %></td>
+                <td><%= user.date_employment %></td>
+                <td><%= user.phone %></td>
+                <td><%= user.login %></td>
+                <td><%= user.email %></td>
+                <td><%= user.position.name %></td>
+                <td><%= link_to t('pages.button.view'), user, type: 'button', class: 'btn btn-outline-info btn-sm' %></td>
+                <td><%= link_to t('pages.button.edit'), edit_user_path(user), type: 'button', class: 'btn btn-outline-info btn-sm' if policy(user).edit? %></td>
+                <td><%= link_to t('pages.button.delete'), user, method: :delete, data: { confirm: 'Are you sure?' }, type: 'button', class: 'btn btn-outline-danger btn-sm' if policy(user).destroy? %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<% if policy(:position).edit? %>
+  <%= link_to t('pages.button.user_new'), new_user_path, type: 'button', class: 'btn btn-outline-info' %>
+  <%= link_to t('pages.button.position_edit'), edit_position_path(@position), type: 'button', class: 'btn btn-outline-info' %>
+  <%= link_to t('pages.button.position_delete'), @position, method: :delete, data: { confirm: 'Are you sure?' }, type: 'button', class: 'btn btn-outline-danger' %>
+<% end %>
+
+<%= link_to t('pages.button.back_to_positions'), positions_path, type: 'button', class: 'btn btn-outline-info' %>

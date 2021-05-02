@@ -1,0 +1,20 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+  style_user = style.add_style(border: Axlsx::STYLE_THIN_BORDER,
+                               alignment: { horizontal: :center })
+
+  style_header = style.add_style(bg_color: "EFC376",
+                                 border: Axlsx::STYLE_THIN_BORDER,
+                                 alignment: { horizontal: :center })
+
+  wb.add_worksheet(name: "Users") do |sheet|
+    sheet.add_row %w[Name Surname Patronymic Position Phone Email], style: style_header
+
+    @users.each do |user|
+      sheet.add_row [user.name, user.surname,
+                     user.patronymic, user.position.name,
+                     user.phone, user.email], style: style_user
+    end
+  end
+end

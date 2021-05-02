@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('pages.global.positions') %></h1>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class=".col-md-8">
+      <table class="table table-striped table-hover table-borderless table-responsive" >
+        <thead class="table-primary">
+        <tr>
+          <th><%= t('pages.table.position_name') %></th>
+          <th><%= t('pages.table.position_count') %></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @positions.each do |position| %>
+          <tr>
+            <td><%= link_to "#{position.name}", position %></td>
+            <td><%= position.users.count %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<% if policy(:position).edit? %>
+  <%= link_to t('pages.button.position_new'), new_position_path, type: 'button', class: 'btn btn-outline-info' %>
+  <%= link_to t('pages.button.user_new'), new_user_path, type: 'button', class: 'btn btn-outline-info' %>
+<% end %>
+
+<%= link_to t('pages.button.all_users'),  users_path, type: 'button', class: 'btn btn-outline-info' %>

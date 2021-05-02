@@ -1,0 +1,30 @@
+<%= simple_form_for @user do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset disabled>
+    <%= f.input :surname, label: t('pages.table.surname') %>
+    <%= f.input :name, label: t('pages.table.name') %>
+    <%= f.input :patronymic, label: t('pages.table.patronymic') %>
+    <%= f.input :date_employment, label: t('pages.table.date') %>
+    <%= f.input :login, label: t('pages.table.login') %>
+
+    <a><%= t('pages.global.position') %></a>
+    <%= f.select :position_id, options_for_select(Position.pluck(:name, :id)), label: t('pages.table.position')%>
+  </fieldset>
+
+  <%= f.input :phone, label: t('pages.table.phone') %>
+  <%= f.input :email, label: t('pages.table.email') %>
+  <%= f.input :password, label: t('pages.table.password') %>
+  <%= f.button :submit, class: 'btn btn-outline-info' %>
+
+<% end %>

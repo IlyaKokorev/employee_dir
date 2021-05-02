@@ -1,0 +1,14 @@
+<h1><%= t('pages.global.new_position') %></h1>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class=".col-md-6">
+      <%= render 'form', position: @position %>
+    </div>
+  </div>
+</div>
+
+
+<br>
+
+<%= link_to t('pages.button.back'), positions_path, type: 'button', class: 'btn btn-outline-info' %>

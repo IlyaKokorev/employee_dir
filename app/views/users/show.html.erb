@@ -1,0 +1,49 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong><%= t('pages.table.surname') %>:</strong>
+    <%= @user.surname %>
+  </p>
+
+  <p>
+    <strong><%= t('pages.table.name') %>:</strong>
+    <%= @user.name %>
+  </p>
+
+  <p>
+    <strong><%= t('pages.table.patronymic') %>:</strong>
+    <%= @user.patronymic %>
+  </p>
+
+  <p>
+    <strong><%= t('pages.table.date') %>:</strong>
+    <%= @user.date_employment %>
+  </p>
+
+  <p>
+    <strong><%= t('pages.table.phone') %>:</strong>
+    <%= @user.phone %>
+  </p>
+
+  <p>
+    <strong><%= t('pages.table.position') %>:</strong>
+    <%= @user.position.name %>
+  </p>
+
+  <p>
+    <strong><%= t('pages.table.email') %>:</strong>
+    <%= @user.email %>
+  </p>
+
+  <% if policy(@user).edit? %>
+    <p>
+      <strong><%= t('pages.table.login') %>:</strong>
+      <%= @user.login %>
+    </p>
+  <% end %>
+
+  <%= link_to t('pages.button.edit'), edit_user_path(@user), type: 'button', class: 'btn btn-outline-info' if policy(@user).edit? %>
+  <%= link_to t('pages.button.back'), positions_path, type: 'button', class: 'btn btn-outline-info' %>
+
+</div>
