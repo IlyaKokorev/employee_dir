@@ -1,24 +1,37 @@
-# README
+# Тестовое задание для ФГБУ «ФРЦ» Минздрава России
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Данное приложение представляет справочник должностей.
+В симтеме сотрудники являются её же пользователями. 
+Регистрации пользователей нет, создаются в ручную при наличии
+прав администратора. Доступ в систему без аутентификации запрещен.
 
-Things you may want to cover:
+Администратор - может просматривать реестр сотрудников, создавать новых, 
+устанавливать или удалять любую информацию и сотрудников.
 
-* Ruby version
+Сотрудник - может просматривать реестр сотрудников, имеет доступ только к редактированию
+своей карточки, а именно может изменять пароль, телефон или email.
 
-* System dependencies
+Всем пользователям доступна выгрузка реестра сотрудников в виде Exel файла.
 
-* Configuration
+При работе использовано: 
+* Сборка ассетов через webpack;
+* UI - Bootstrap 4;
+* Формы созданы gem simple_form;
+* Авторизация пользователя через gem pundit;
+* Роли задаются с помощью gem rolify;
+* Поигрался с CSS (сквозь боль и слезы).
 
-* Database creation
+## Версии
 
-* Database initialization
+* Rails 6.0.3.6
+* Ruby 2.7.0p0
 
-* How to run the test suite
+## Установка и запуск
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ git clone https://github.com/IlyaKokorev/employee_dir.git
+$ bundle
+$ rake db:migrate 
+$ rake db:seed
+$ bin/webpack-dev-server
+$ rails s
