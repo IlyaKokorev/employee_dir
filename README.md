@@ -31,7 +31,7 @@
 ```
 $ git clone https://github.com/IlyaKokorev/employee_dir.git
 $ bundle
-$ rake db:create db:migrate db:seed
+$ rake db:migrate db:seed
 $ bin/webpack-dev-server
 $ rails s
 ```
