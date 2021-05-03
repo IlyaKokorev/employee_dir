@@ -1,4 +1,4 @@
-# Тестовое задание для ФГБУ «ФРЦ» Минздрава России
+# Справочник сотрудников организации
 
 Данное приложение представляет справочник должностей.
 В симтеме сотрудники являются её же пользователями. 
@@ -31,7 +31,7 @@
 ```
 $ git clone https://github.com/IlyaKokorev/employee_dir.git
 $ bundle
-$ rake db:migrate 
-$ rake db:seed
+$ rake db:create db:migrate db:seed
 $ bin/webpack-dev-server
 $ rails s
+```
