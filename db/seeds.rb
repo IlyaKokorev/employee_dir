@@ -1,7 +1,4 @@
-require 'database_cleaner'
 require 'rolify'
-
-DatabaseCleaner.clean_with(:truncation)
 
 Position.create!({name: "HR-director"})
 
