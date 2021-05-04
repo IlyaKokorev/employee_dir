@@ -24,6 +24,7 @@ gem "bootstrap_form", "~> 4.0"
 gem 'simple_form'
 gem 'rails-i18n'
 gem 'rubocop'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry'

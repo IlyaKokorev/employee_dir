@@ -33,5 +33,7 @@ module Testdirectory
     config.generators.system_tests = nil
     config.i18n.default_locale = :ru
     config.i18n.locale = :ru
+    config.load_defaults "6.0"
+    config.autoloader = :classic
   end
 end
