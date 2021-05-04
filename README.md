@@ -35,3 +35,5 @@ $ rake db:migrate db:seed
 $ bin/webpack-dev-server
 $ rails s
 ```
+
+Ознакомиться: [ТЫКС](https://employee-dir-kis.herokuapp.com/positions)
